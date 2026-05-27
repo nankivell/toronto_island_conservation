@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toronto Island Conservation Flyer</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f6f1;
+        color: #1f2b24;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      header {
+        align-items: center;
+        background: #ffffff;
+        border-bottom: 1px solid #d9dfd2;
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        padding: 14px 18px;
+      }
+
+      h1 {
+        font-size: 18px;
+        line-height: 1.25;
+        margin: 0;
+      }
+
+      a {
+        color: #245b43;
+        font-weight: 700;
+      }
+
+      .pdf-frame {
+        border: 0;
+        display: block;
+        height: calc(100vh - 59px);
+        width: 100%;
+      }
+
+      .fallback {
+        padding: 24px;
+      }
+
+      @media (max-width: 640px) {
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .pdf-frame {
+          height: calc(100vh - 88px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Toronto Island Conservation Flyer</h1>
+      <a href="PDF%20Island%20Conservation%20Flyer.pdf">Open PDF</a>
+    </header>
+
+    <object
+      class="pdf-frame"
+      data="PDF%20Island%20Conservation%20Flyer.pdf"
+      type="application/pdf"
+    >
+      <div class="fallback">
+        <p>
+          <a href="PDF%20Island%20Conservation%20Flyer.pdf">Open the PDF</a>
+        </p>
+      </div>
+    </object>
+  </body>
+</html>
