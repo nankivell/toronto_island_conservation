@@ -26,16 +26,27 @@
             background-color: #ffffff;
             color: #3c6dff;
             line-height: 1.6;
-            padding: 40px 20px;
+            display: flex;
+            min-height: 100vh;
         }
         
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        .left-nav {
+            width: 40%;
+            padding: 40px 20px;
+            border-right: 1px solid #e0e0e0;
+            overflow-y: auto;
+            max-height: 100vh;
+        }
+        
+        .right-content {
+            width: 60%;
+            padding: 40px 20px;
+            overflow-y: auto;
+            max-height: 100vh;
         }
         
         header {
-            margin-bottom: 10px;
+            margin-bottom: 40px;
         }
         
         h1 {
@@ -44,7 +55,8 @@
             font-weight: 600;
             margin-bottom: 8px;
             color: #2eff64;
-            -webkit-text-stroke: .25px #3c6dff;
+            -webkit-text-stroke: 1px #3c6dff;
+            line-height: 1;
         }
         
         .subtitle {
@@ -102,6 +114,7 @@
             color: #3c6dff;
             text-decoration: none;
             font-size: 16px;
+            cursor: pointer;
         }
         
         .project-list a:hover {
@@ -115,23 +128,65 @@
             text-align: center;
         }
         
-        @media (max-width: 640px) {
+        .content-title {
+            font-family: 'Cubano', sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: #2eff64;
+            -webkit-text-stroke: .25px #3c6dff;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        .content-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #3c6dff;
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        .back-link {
+            color: #3c6dff;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
             body {
-                padding: 30px 15px;
+                flex-direction: column;
+            }
+            
+            .left-nav {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            
+            .right-content {
+                width: 100%;
             }
             
             h1 {
-                font-size: 24px;
-            }
-            
-            section h2 {
-                font-size: 12px;
+                font-size: 48px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="left-nav">
         <header>
             <h1>Protect the Toronto Islands</h1>
             <p class="subtitle">Stop the Billy Bishop Airport Expansion</p>
@@ -140,23 +195,100 @@
             </div>
             <div class="divider">✦</div>
         </header>
+        
         <section>
             <h2>Resources</h2>
             <ul class="project-list">
-                <li><a href="#resources">Contact Your Political Reps</a></li>
-                <li><a href="#resources">Join Local Actions</a></li>
-                <li><a href="#resources">Download our wheat-pastable POSTER</a></li>
+                <li><a onclick="showContent('contact-reps')">Contact Your Political Reps</a></li>
+                <li><a onclick="showContent('join-actions')">Join Local Actions</a></li>
+                <li><a onclick="showContent('download-poster')">Download our wheat-pastable POSTER</a></li>
             </ul>
         </section>
         <div class="divider">✦</div>
         <section>
             <h2>Owl's Club Townhall</h2>
             <ul class="project-list">
-                <li><a href="#resources">Townhall Recap</a></li>
-                <li><a href="#resources">Download our FACT SHEET</a></li>
+                <li><a onclick="showContent('townhall-recap')">Townhall Recap</a></li>
+                <li><a onclick="showContent('fact-sheet')">Download our FACT SHEET</a></li>
+            </ul>
         </section>
         <div class="divider">✦</div>
         <p class="copyright">Website by Nessie Nankivell</p>
     </div>
+    
+    <div class="right-content">
+        <a class="back-link" onclick="showHome()" style="display:none;" id="backLink">← Back</a>
+        
+        <div id="home-content">
+            <p style="color: #9cadff; font-size: 14px;">Click on a topic to the left to explore more information.</p>
+        </div>
+        
+        <div id="contact-reps" class="content-section">
+            <h2 class="content-title">Contact Your Political Reps</h2>
+            <div class="content-text">
+                <p>Taking action starts with making your voice heard. Contact your elected representatives and let them know you oppose the Billy Bishop Airport expansion.</p>
+                <p style="margin-top: 20px;"><strong>Federal:</strong> Your MP</p>
+                <p><strong>Provincial:</strong> Your MPP</p>
+                <p><strong>Municipal:</strong> City Councillor</p>
+            </div>
+        </div>
+        
+        <div id="join-actions" class="content-section">
+            <h2 class="content-title">Join Local Actions</h2>
+            <div class="content-text">
+                <p>Get involved in community efforts to protect the Toronto Islands. There are many ways to participate and make a difference.</p>
+                <p style="margin-top: 20px;">Join us at community meetings, rallies, and advocacy campaigns.</p>
+            </div>
+        </div>
+        
+        <div id="download-poster" class="content-section">
+            <h2 class="content-title">Download our Poster</h2>
+            <div class="content-text">
+                <p>Download and share our wheat-pastable poster to spread awareness in your community.</p>
+                <p style="margin-top: 20px;"><a href="#" style="color: #2eff64; text-decoration: underline;">Download Poster PDF</a></p>
+            </div>
+        </div>
+        
+        <div id="townhall-recap" class="content-section">
+            <h2 class="content-title">Townhall Recap</h2>
+            <div class="content-text">
+                <p>We hosted an important townhall at the Owl's Club to discuss the airport expansion and its impact on Toronto's islands.</p>
+                <p style="margin-top: 20px;">Key takeaways and discussions from the event are summarized here.</p>
+            </div>
+        </div>
+        
+        <div id="fact-sheet" class="content-section">
+            <h2 class="content-title">Fact Sheet</h2>
+            <div class="content-text">
+                <p>Our comprehensive fact sheet outlines the key issues with the Billy Bishop Airport expansion proposal.</p>
+                <p style="margin-top: 20px;"><a href="#" style="color: #2eff64; text-decoration: underline;">Download Fact Sheet PDF</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showContent(contentId) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show the selected content
+            const selectedContent = document.getElementById(contentId);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+                document.getElementById('backLink').style.display = 'inline-block';
+            }
+        }
+        
+        function showHome() {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show home content
+            document.getElementById('home-content').style.display = 'block';
+            document.getElementById('backLink').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
