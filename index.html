@@ -135,7 +135,7 @@
         
         .content-title {
             font-family: 'Cubano', sans-serif;
-            font-size: 20px;
+            font-size: 28px;
             font-weight: 600;
             color: #9cadff;
             -webkit-text-stroke: .25px #3c6dff;
@@ -303,6 +303,9 @@
             // Hide all content sections
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.classList.remove('active'));
+            
+            // Hide home content (the image)
+            document.getElementById('home-content').style.display = 'none';
             
             // Show the selected content
             const selectedContent = document.getElementById(contentId);
