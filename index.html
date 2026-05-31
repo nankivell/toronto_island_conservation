@@ -164,6 +164,19 @@
             text-decoration: underline;
         }
         
+        #home-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        #home-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
@@ -220,7 +233,7 @@
         <a class="back-link" onclick="showHome()" style="display:none;" id="backLink">← Back</a>
         
         <div id="home-content">
-            <p style="color: #9cadff; font-size: 14px;">Click on a topic to the left to explore more information.</p>
+            <img src="Toronto-archives-trillums.png" alt="Toronto Islands Trilliums">
         </div>
         
         <div id="contact-reps" class="content-section">
@@ -286,7 +299,7 @@
             sections.forEach(section => section.classList.remove('active'));
             
             // Show home content
-            document.getElementById('home-content').style.display = 'block';
+            document.getElementById('home-content').style.display = 'flex';
             document.getElementById('backLink').style.display = 'none';
         }
     </script>
