@@ -135,9 +135,9 @@
         
         .content-title {
             font-family: 'Cubano', sans-serif;
-            font-size: 40px;
+            font-size: 20px;
             font-weight: 600;
-            color: #2eff64;
+            color: #9cadff;
             -webkit-text-stroke: .25px #3c6dff;
             margin-bottom: 30px;
             line-height: 1.2;
@@ -219,17 +219,17 @@
             <section>
                 <h2>Resources</h2>
                 <ul class="project-list">
-                    <li><a onclick="showContent('contact-reps')">Contact Your Political Reps</a></li>
-                    <li><a onclick="showContent('join-actions')">Join Local Actions</a></li>
-                    <li><a onclick="showContent('download-poster')">Download our wheat-pastable POSTER</a></li>
+                    <li><a href="?page=contact-reps">Contact Your Political Reps</a></li>
+                    <li><a href="?page=join-actions">Join Local Actions</a></li>
+                    <li><a href="?page=download-poster">Download our wheat-pastable POSTER</a></li>
                 </ul>
             </section>
             <div class="divider">✦</div>
             <section>
                 <h2>Owl's Club Townhall</h2>
                 <ul class="project-list">
-                    <li><a onclick="showContent('townhall-recap')">Townhall Recap</a></li>
-                    <li><a onclick="showContent('fact-sheet')">Download our FACT SHEET</a></li>
+                    <li><a href="?page=townhall-recap">Townhall Recap</a></li>
+                    <li><a href="?page=fact-sheet">Download our FACT SHEET</a></li>
                 </ul>
             </section>
             <div class="divider">✦</div>
@@ -237,7 +237,7 @@
         </div>
         
         <div class="right-content">
-            <a class="back-link" onclick="showHome()" style="display:none;" id="backLink">← Back</a>
+            <a class="back-link" href="?" style="display:none;" id="backLink">← Back</a>
             
             <div id="home-content">
                 <img src="Toronto-archives-trillums.png" alt="Toronto Islands Trilliums">
@@ -288,6 +288,17 @@
     </div>
     
     <script>
+        function loadContentFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            const page = params.get('page');
+            
+            if (page) {
+                showContent(page);
+            } else {
+                showHome();
+            }
+        }
+        
         function showContent(contentId) {
             // Hide all content sections
             const sections = document.querySelectorAll('.content-section');
@@ -319,6 +330,22 @@
             link.click();
             document.body.removeChild(link);
         }
+        
+        // Load content based on URL when page loads
+        window.addEventListener('load', loadContentFromURL);
+        
+        // Handle back button navigation
+        window.addEventListener('popstate', loadContentFromURL);
+        
+        // Intercept link clicks to use URL parameters instead of navigation
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('?')) {
+                e.preventDefault();
+                const href = e.target.getAttribute('href');
+                window.history.pushState(null, '', href);
+                loadContentFromURL();
+            }
+        });
     </script>
 </body>
 </html>
