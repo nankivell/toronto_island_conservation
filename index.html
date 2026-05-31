@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Toronto Island Conservation Flyer</title>
+    <title>Toronto Island Conservation</title>
     <style>
         * {
             margin: 0;
@@ -12,19 +12,141 @@
         }
         
         body {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            padding: 40px 20px;
         }
         
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+        
+        .social-links {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: #000;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .divider {
+            font-size: 12px;
+            color: #999;
+            margin: 20px 0;
+            letter-spacing: 2px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        section h2 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-list {
+            list-style: none;
+        }
+        
+        .project-list li {
+            margin-bottom: 12px;
+        }
+        
+        .project-list a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .project-list a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 640px) {
+            body {
+                padding: 30px 15px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            section h2 {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <iframe src="https://docs.google.com/gview?url=https://nankivell.github.io/toronto_island_conservation/island-conservation-flyer.pdf&embedded=true"></iframe>
+    <div class="container">
+        <header>
+            <h1>Toronto Island Conservation</h1>
+            <p class="subtitle">Protecting & restoring Toronto's island ecosystems</p>
+            <div class="social-links">
+                <a href="mailto:contact@example.com">Email</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+            <div class="divider">✦</div>
+        </header>
+        
+        <section>
+            <h2>About</h2>
+            <ul class="project-list">
+                <li><a href="#about">Our Mission</a></li>
+                <li><a href="#team">Team</a></li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Projects</h2>
+            <ul class="project-list">
+                <li><a href="#project1">Habitat Restoration</a></li>
+                <li><a href="#project2">Species Monitoring</a></li>
+                <li><a href="#project3">Community Engagement</a></li>
+                <li><a href="#project4">Educational Resources</a></li>
+                <li><a href="#project5">Volunteer Programs</a></li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Resources</h2>
+            <ul class="project-list">
+                <li><a href="#resources">Conservation Report</a></li>
+                <li><a href="#resources">Field Guide</a></li>
+                <li><a href="#resources">Photo Gallery</a></li>
+            </ul>
+        </section>
+    </div>
 </body>
 </html>
