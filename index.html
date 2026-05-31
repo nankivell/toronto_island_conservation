@@ -10,10 +10,6 @@
             src: local('Cubano');
         }
         
-        @font-face {
-            font-family: 'Beatle';
-            src: local('Beatle');
-        }
         
         * {
             margin: 0;
@@ -59,7 +55,7 @@
         }
         
         h1 {
-            font-family: 'Beatle', sans-serif;
+            font-family: 'Cubano', sans-serif;
             font-size: 96px;
             font-weight: 500;
             margin-bottom: 8px;
@@ -286,7 +282,7 @@
                 <h2 class="content-title">Fact Sheet</h2>
                 <div class="content-text">
                     <p>Our comprehensive fact sheet outlines the key issues with the Billy Bishop Airport expansion proposal.</p>
-                    <p style="margin-top: 20px;"><a href="#" style="color: #2eff64; text-decoration: underline;">Download Fact Sheet PDF</a></p>
+                    <p style="margin-top: 20px;"><a onclick="downloadFile('island-conservation-flyer.pdf')" style="color: #2eff64; text-decoration: underline; cursor: pointer;">Download Fact Sheet PDF</a></p>
                 </div>
             </div>
         </div>
@@ -314,6 +310,15 @@
             // Show home content
             document.getElementById('home-content').style.display = 'flex';
             document.getElementById('backLink').style.display = 'none';
+        }
+        
+        function downloadFile(filename) {
+            const link = document.createElement('a');
+            link.href = filename;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
