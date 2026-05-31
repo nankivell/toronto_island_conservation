@@ -190,10 +190,46 @@
             
             .left-nav {
                 width: 100%;
+                padding: 0px 20px 0px 20px;
             }
             
             .right-content {
                 width: 100%;
+                padding: 0px 20px 20px 20px;
+                position: static;
+            }
+            
+            #home-content {
+                display: none;
+            }
+            
+            .content-section {
+                display: none;
+                padding-top: 20px;
+                padding-bottom: 30px;
+                margin-bottom: 20px;
+                border-top: 1px solid #9cadff;
+                padding-left: 20px;
+                margin-left: -20px;
+                margin-right: -20px;
+                padding-right: 20px;
+            }
+            
+            .content-section.active {
+                display: block;
+            }
+            
+            .project-list li .content-section {
+                margin-top: 15px;
+                border-top: none;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            #back-link-mobile {
+                display: none;
             }
             
             h1 {
@@ -300,18 +336,36 @@
         }
         
         function showContent(contentId) {
-            // Hide all content sections
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => section.classList.remove('active'));
+            const isMobile = window.innerWidth <= 768;
             
-            // Hide home content (the image)
-            document.getElementById('home-content').style.display = 'none';
-            
-            // Show the selected content
-            const selectedContent = document.getElementById(contentId);
-            if (selectedContent) {
-                selectedContent.classList.add('active');
-                document.getElementById('backLink').style.display = 'inline-block';
+            if (isMobile) {
+                // On mobile, toggle content visibility inline with list
+                const selectedContent = document.getElementById(contentId);
+                if (selectedContent) {
+                    const isActive = selectedContent.classList.contains('active');
+                    // Hide all other content sections
+                    const sections = document.querySelectorAll('.content-section');
+                    sections.forEach(section => section.classList.remove('active'));
+                    
+                    // Toggle the selected one
+                    if (!isActive) {
+                        selectedContent.classList.add('active');
+                    }
+                }
+            } else {
+                // On desktop, show in right column
+                const sections = document.querySelectorAll('.content-section');
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Hide home content (the image)
+                document.getElementById('home-content').style.display = 'none';
+                
+                // Show the selected content
+                const selectedContent = document.getElementById(contentId);
+                if (selectedContent) {
+                    selectedContent.classList.add('active');
+                    document.getElementById('backLink').style.display = 'inline-block';
+                }
             }
         }
         
