@@ -164,16 +164,12 @@
         
         @media (min-width: 769px) {
             .project-list li .content-section {
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 70%;
-                height: 100vh;
-                padding: 20px;
-                padding-top: 100px;
-                overflow-y: auto;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: calc(70% - 40px);
+                padding: 0;
                 display: none;
-                z-index: 10;
             }
             
             .project-list li .content-section.active {
