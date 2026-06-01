@@ -67,7 +67,7 @@
         .subtitle {
             font-size: 18px;
             color: #3c6dff;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
         }
         
         .social-links {
@@ -156,6 +156,10 @@
         
         .content-section.active {
             display: block;
+        }
+        
+        .project-list li .content-section {
+            display: none;
         }
         
         .back-link {
@@ -255,17 +259,64 @@
             <section>
                 <h2>Resources</h2>
                 <ul class="project-list">
-                    <li><a href="?page=contact-reps">Contact Your Political Reps</a></li>
-                    <li><a href="?page=join-actions">Join Local Actions</a></li>
-                    <li><a href="?page=download-poster">Download our wheat-pastable POSTER</a></li>
+                    <li>
+                        <a href="?page=contact-reps">Contact Your Political Reps</a>
+                        <div id="contact-reps" class="content-section">
+                            <h2 class="content-title">Contact Your Political Reps</h2>
+                            <div class="content-text">
+                                <p>Taking action starts with making your voice heard. Contact your elected representatives and let them know you oppose the Billy Bishop Airport expansion.</p>
+                                <p style="margin-top: 20px;"><strong>Federal:</strong> Your MP</p>
+                                <p><strong>Provincial:</strong> Your MPP</p>
+                                <p><strong>Municipal:</strong> City Councillor</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="?page=join-actions">Join Local Actions</a>
+                        <div id="join-actions" class="content-section">
+                            <h2 class="content-title">Join Local Actions</h2>
+                            <div class="content-text">
+                                <p>Get involved in community efforts to protect the Toronto Islands. There are many ways to participate and make a difference.</p>
+                                <p style="margin-top: 20px;">Join us at community meetings, rallies, and advocacy campaigns.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="?page=download-poster">Download our wheat-pastable POSTER</a>
+                        <div id="download-poster" class="content-section">
+                            <h2 class="content-title">Download our Poster</h2>
+                            <div class="content-text">
+                                <p>Download and share our wheat-pastable poster to spread awareness in your community.</p>
+                                <p style="margin-top: 20px;"><a href="#" style="color: #2eff64; text-decoration: underline;">Download Poster PDF</a></p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </section>
             <div class="divider">✦</div>
             <section>
                 <h2>Owl's Club Townhall</h2>
                 <ul class="project-list">
-                    <li><a href="?page=townhall-recap">Townhall Recap</a></li>
-                    <li><a href="?page=fact-sheet">Download our FACT SHEET</a></li>
+                    <li>
+                        <a href="?page=townhall-recap">Townhall Recap</a>
+                        <div id="townhall-recap" class="content-section">
+                            <h2 class="content-title">Townhall Recap</h2>
+                            <div class="content-text">
+                                <p>We hosted an important townhall at the Owl's Club to discuss the airport expansion and its impact on Toronto's islands.</p>
+                                <p style="margin-top: 20px;">Key takeaways and discussions from the event are summarized here.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="?page=fact-sheet">Download our FACT SHEET</a>
+                        <div id="fact-sheet" class="content-section">
+                            <h2 class="content-title">Fact Sheet</h2>
+                            <div class="content-text">
+                                <p>Our comprehensive fact sheet outlines the key issues with the Billy Bishop Airport expansion proposal.</p>
+                                <p style="margin-top: 20px;"><a onclick="downloadFile('island-conservation-flyer.pdf')" style="color: #2eff64; text-decoration: underline; cursor: pointer;">Download Fact Sheet PDF</a></p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </section>
             <div class="divider">✦</div>
@@ -277,48 +328,6 @@
             
             <div id="home-content">
                 <img src="Toronto-archives-trillums.png" alt="Toronto Islands Trilliums">
-            </div>
-            
-            <div id="contact-reps" class="content-section">
-                <h2 class="content-title">Contact Your Political Reps</h2>
-                <div class="content-text">
-                    <p>Taking action starts with making your voice heard. Contact your elected representatives and let them know you oppose the Billy Bishop Airport expansion.</p>
-                    <p style="margin-top: 20px;"><strong>Federal:</strong> Your MP</p>
-                    <p><strong>Provincial:</strong> Your MPP</p>
-                    <p><strong>Municipal:</strong> City Councillor</p>
-                </div>
-            </div>
-            
-            <div id="join-actions" class="content-section">
-                <h2 class="content-title">Join Local Actions</h2>
-                <div class="content-text">
-                    <p>Get involved in community efforts to protect the Toronto Islands. There are many ways to participate and make a difference.</p>
-                    <p style="margin-top: 20px;">Join us at community meetings, rallies, and advocacy campaigns.</p>
-                </div>
-            </div>
-            
-            <div id="download-poster" class="content-section">
-                <h2 class="content-title">Download our Poster</h2>
-                <div class="content-text">
-                    <p>Download and share our wheat-pastable poster to spread awareness in your community.</p>
-                    <p style="margin-top: 20px;"><a href="#" style="color: #2eff64; text-decoration: underline;">Download Poster PDF</a></p>
-                </div>
-            </div>
-            
-            <div id="townhall-recap" class="content-section">
-                <h2 class="content-title">Townhall Recap</h2>
-                <div class="content-text">
-                    <p>We hosted an important townhall at the Owl's Club to discuss the airport expansion and its impact on Toronto's islands.</p>
-                    <p style="margin-top: 20px;">Key takeaways and discussions from the event are summarized here.</p>
-                </div>
-            </div>
-            
-            <div id="fact-sheet" class="content-section">
-                <h2 class="content-title">Fact Sheet</h2>
-                <div class="content-text">
-                    <p>Our comprehensive fact sheet outlines the key issues with the Billy Bishop Airport expansion proposal.</p>
-                    <p style="margin-top: 20px;"><a onclick="downloadFile('island-conservation-flyer.pdf')" style="color: #2eff64; text-decoration: underline; cursor: pointer;">Download Fact Sheet PDF</a></p>
-                </div>
             </div>
         </div>
     </div>
