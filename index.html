@@ -32,7 +32,7 @@
         
         .page-header {
             width: 100%;
-            padding: 20px 20px;
+            padding: 20px 20px 10px 20px;
             flex-shrink: 0;
         }
         
@@ -106,6 +106,7 @@
             color: #9cadff;
             margin: 10px 0;
             letter-spacing: 2px;
+            line-height: 1;
         }
         
         section {
@@ -150,9 +151,9 @@
         .copyright {
             font-size: 10px;
             color: #9cadff;
-            margin-top: auto;
             text-align: center;
-            padding-top: 20px;
+            padding: 20px;
+            margin-top: auto;
         }
         
         .content-title {
@@ -192,7 +193,7 @@
 
             #home-content-desktop {
                 display: flex;
-                margin-top: -125px;
+                margin-top: -175px;
             }
 
             .project-list li .content-section {
@@ -288,6 +289,10 @@
                 width: 100%;
                 padding: 0px 20px 20px 20px;
                 position: static;
+            }
+
+            .copyright {
+                padding: 20px;
             }
             
             .content-section {
@@ -408,7 +413,6 @@
                 </ul>
             </section>
             <div class="divider">✦</div>
-            <p class="copyright">Website by Nessie Nankivell</p>
         </div>
         
         <div class="right-content">
@@ -418,6 +422,8 @@
             <a class="back-link" href="?" style="display:none;" id="backLink">← Back</a>
         </div>
     </div>
+
+    <p class="copyright">Website by Nessie Nankivell</p>
     
     <script>
         function loadContentFromURL() {
