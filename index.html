@@ -214,6 +214,10 @@
             align-items: flex-start;
             justify-content: center;
             margin-top: -150px;
+            flex-shrink: 0;
+            width: 70%;
+            padding: 0px 20px 20px 20px;
+            margin-left: 30%;
         }
         
         #home-content img {
@@ -227,9 +231,24 @@
                 flex-direction: column;
             }
             
+            .page-header {
+                order: 1;
+            }
+            
+            #home-content {
+                display: flex;
+                order: 2;
+                margin-top: 0px;
+                margin-bottom: 30px;
+                position: static;
+                width: 100%;
+                padding: 0px 20px;
+                margin-left: 0;
+            }
+            
             .content-wrapper {
                 flex-direction: column;
-                order: 2;
+                order: 3;
             }
             
             .left-nav {
@@ -240,15 +259,6 @@
             .right-content {
                 width: 100%;
                 padding: 0px 20px 20px 20px;
-                position: static;
-                order: 2;
-            }
-            
-            #home-content {
-                display: flex;
-                order: 1;
-                margin-top: 0px;
-                margin-bottom: 30px;
                 position: static;
             }
             
@@ -298,6 +308,11 @@
             <div class="divider">✦</div>
         </header>
     </div>
+    
+    <div id="home-content">
+        <img src="Toronto-archives-trillums.png" alt="Toronto Islands Trilliums">
+    </div>
+    
     <div class="content-wrapper">
         <div class="left-nav">
             <section>
@@ -369,10 +384,6 @@
         
         <div class="right-content">
             <a class="back-link" href="?" style="display:none;" id="backLink">← Back</a>
-            
-            <div id="home-content">
-                <img src="Toronto-archives-trillums.png" alt="Toronto Islands Trilliums">
-            </div>
         </div>
     </div>
     
