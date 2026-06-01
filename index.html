@@ -7,7 +7,7 @@
     <style>
         @font-face {
             font-family: 'Sugo Pro Display';
-            src: url('Sugo-Pro-Display-Regular-trial.ttf') format('truetype');
+            src: url('/toronto_island_conservation/Sugo-Pro-Display-Regular-trial.ttf') format('truetype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -338,7 +338,7 @@
     </div>
     
     <div id="home-content-mobile" class="home-content">
-        <img src="Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
+        <img src="/toronto_island_conservation/Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
     </div>
     
     <div class="content-wrapper">
@@ -412,7 +412,7 @@
         
         <div class="right-content">
             <div id="home-content-desktop" class="home-content">
-                <img src="Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
+                <img src="/toronto_island_conservation/Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
             </div>
             <a class="back-link" href="?" style="display:none;" id="backLink">← Back</a>
         </div>
@@ -481,7 +481,7 @@
         
         function downloadFile(filename) {
             const link = document.createElement('a');
-            link.href = filename;
+            link.href = '/toronto_island_conservation/' + filename;
             link.download = filename;
             document.body.appendChild(link);
             link.click();
