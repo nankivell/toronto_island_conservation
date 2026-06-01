@@ -191,9 +191,15 @@
                 display: none !important;
             }
 
-            #home-content-desktop {
+            .right-content #home-content-desktop {
                 display: flex;
-                margin-top: -175px;
+                position: fixed;
+                top: 50%;
+                right: 20px;
+                width: calc(70% - 40px);
+                transform: translateY(-50%);
+                padding: 0;
+                margin-top: 0;
             }
 
             .project-list li .content-section {
