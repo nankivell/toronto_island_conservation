@@ -158,6 +158,29 @@
             display: block;
         }
         
+        .project-list li .content-section {
+            position: static;
+        }
+        
+        @media (min-width: 769px) {
+            .project-list li .content-section {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                padding: 20px;
+                padding-top: 100px;
+                overflow-y: auto;
+                display: none;
+                z-index: 10;
+            }
+            
+            .project-list li .content-section.active {
+                display: block;
+            }
+        }
+        
         .back-link {
             color: #3c6dff;
             text-decoration: none;
