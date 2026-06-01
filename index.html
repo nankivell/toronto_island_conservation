@@ -36,6 +36,7 @@
         .content-wrapper {
             display: flex;
             flex: 1;
+            align-items: flex-start;
         }
         
         .left-nav {
@@ -182,9 +183,17 @@
         }
         
         @media (min-width: 769px) {
+            #home-content-mobile {
+                display: none !important;
+            }
+
+            #home-content-desktop {
+                display: flex;
+            }
+
             .project-list li .content-section {
                 position: absolute;
-                top: 310px;
+                top: 260px;
                 right: 20px;
                 width: calc(70% - 40px);
                 padding: 0;
@@ -194,34 +203,44 @@
             .project-list li .content-section.active {
                 display: block;
             }
+
+            .content-title {
+                margin-top: 0;
+            }
         }
         
         .back-link {
             color: #2eff64;
             text-decoration: none;
             font-size: 14px;
-            margin-bottom: 100px;
+            margin-bottom: 20px;
             cursor: pointer;
             display: block;
-            padding-bottom: 60px;
+            padding-bottom: 0;
         }
         
         .back-link:hover {
             text-decoration: underline;
         }
         
-        #home-content {
+        .home-content {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            margin-top: -150px;
+        }
+
+        #home-content-mobile {
+            display: none;
+        }
+
+        #home-content-desktop {
+            margin-top: 0;
             flex-shrink: 0;
-            width: 70%;
-            padding: 0px 20px 20px 20px;
-            margin-left: 30%;
+            width: 100%;
+            padding: 0px 0px 20px 0px;
         }
         
-        #home-content img {
+        .home-content img {
             max-width: 100%;
             max-height: 70vh;
             object-fit: contain;
@@ -236,7 +255,7 @@
                 order: 1;
             }
             
-            #home-content {
+            #home-content-mobile {
                 display: flex;
                 order: 2;
                 margin-top: 0px;
@@ -245,6 +264,10 @@
                 width: 100%;
                 padding: 0px 20px;
                 margin-left: 0;
+            }
+
+            #home-content-desktop {
+                display: none;
             }
             
             .content-wrapper {
@@ -311,8 +334,8 @@
         </header>
     </div>
     
-    <div id="home-content">
-        <img src="Toronto-archives-trillums.png" alt="Toronto Islands Trilliums">
+    <div id="home-content-mobile" class="home-content">
+        <img src="Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
     </div>
     
     <div class="content-wrapper">
@@ -385,6 +408,9 @@
         </div>
         
         <div class="right-content">
+            <div id="home-content-desktop" class="home-content">
+                <img src="Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
+            </div>
             <a class="back-link" href="?" style="display:none;" id="backLink">← Back</a>
         </div>
     </div>
@@ -405,6 +431,8 @@
             const isMobile = window.innerWidth <= 768;
             
             if (isMobile) {
+                document.getElementById('home-content-desktop').style.display = 'none';
+
                 // On mobile, toggle content visibility inline with list
                 const selectedContent = document.getElementById(contentId);
                 if (selectedContent) {
@@ -424,7 +452,7 @@
                 sections.forEach(section => section.classList.remove('active'));
                 
                 // Hide home content (the image)
-                document.getElementById('home-content').style.display = 'none';
+                document.getElementById('home-content-desktop').style.display = 'none';
                 
                 // Show the selected content
                 const selectedContent = document.getElementById(contentId);
@@ -439,9 +467,12 @@
             // Hide all content sections
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.classList.remove('active'));
+
+            const isMobile = window.innerWidth <= 768;
             
             // Show home content
-            document.getElementById('home-content').style.display = 'flex';
+            document.getElementById('home-content-mobile').style.display = isMobile ? 'flex' : 'none';
+            document.getElementById('home-content-desktop').style.display = isMobile ? 'none' : 'flex';
             document.getElementById('backLink').style.display = 'none';
         }
         
