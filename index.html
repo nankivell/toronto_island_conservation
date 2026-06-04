@@ -141,7 +141,7 @@
         
         .project-list a {
             color: #3c6dff;
-            text-decoration: underline;
+            text-decoration: none;
             font-size: 16px;
             cursor: pointer;
         }
@@ -190,11 +190,11 @@
             color: #3c6dff;
         }
 
-        .left-nav a {
+        .content-section a {
             text-decoration: underline;
         }
 
-        .left-nav a::after {
+        .content-section a::after {
             content: " ↗";
         }
 
@@ -625,8 +625,8 @@
         // Load content based on URL when page loads
         window.addEventListener('load', loadContentFromURL);
 
-        // Left-nav and nested resource links should open in new tabs.
-        document.querySelectorAll('.left-nav a').forEach(function(link) {
+        // Resource links inside opened content should open in new tabs.
+        document.querySelectorAll('.content-section a').forEach(function(link) {
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
         });
