@@ -282,8 +282,23 @@
         
         .home-content {
             display: flex;
+            flex-direction: column;
             align-items: flex-start;
             justify-content: center;
+        }
+
+        .home-intro {
+            color: #3c6dff;
+            margin-bottom: 24px;
+            max-width: 100%;
+        }
+
+        .home-intro h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.45;
+            margin-bottom: 16px;
         }
 
         #home-content-mobile {
@@ -321,6 +336,14 @@
                 width: 100%;
                 padding: 0px 20px;
                 margin-left: 0;
+            }
+
+            .home-intro {
+                margin-bottom: 20px;
+            }
+
+            .home-intro h2 {
+                font-size: 16px;
             }
 
             #home-content-desktop {
@@ -397,6 +420,10 @@
     </div>
     
     <div id="home-content-mobile" class="home-content">
+        <div class="home-intro">
+            <h2><span style="font-weight: 400;">Toronto Island&rsquo;s public land and waterfront is under threat of being privatized and decimated due to the proposed expansion of Billy Bishop Airport.</span></h2>
+            <h2><span style="font-weight: 400;">We&rsquo;ve made this website to collect information about what&rsquo;s happening &amp; to share actionable resources, so you can share ways to act to protect this land with your communities!</span></h2>
+        </div>
         <img src="/toronto_island_conservation/Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
     </div>
     
@@ -496,6 +523,10 @@
         
         <div class="right-content">
             <div id="home-content-desktop" class="home-content">
+                <div class="home-intro">
+                    <h2><span style="font-weight: 400;">Toronto Island&rsquo;s public land and waterfront is under threat of being privatized and decimated due to the proposed expansion of Billy Bishop Airport.</span></h2>
+                    <h2><span style="font-weight: 400;">We&rsquo;ve made this website to collect information about what&rsquo;s happening &amp; to share actionable resources, so you can share ways to act to protect this land with your communities!</span></h2>
+                </div>
                 <img src="/toronto_island_conservation/Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
             </div>
             <a class="back-link" href="?" style="display:none;" id="backLink">← Back</a>
