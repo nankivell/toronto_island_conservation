@@ -141,7 +141,7 @@
         
         .project-list a {
             color: #3c6dff;
-            text-decoration: none;
+            text-decoration: underline;
             font-size: 16px;
             cursor: pointer;
         }
@@ -187,6 +187,14 @@
         .resource-title,
         .content-section a {
             color: #3c6dff;
+        }
+
+        .left-nav a {
+            text-decoration: underline;
+        }
+
+        .left-nav a::after {
+            content: " ↗";
         }
 
         .resource-author {
@@ -606,15 +614,23 @@
         
         // Load content based on URL when page loads
         window.addEventListener('load', loadContentFromURL);
+
+        // Left-nav and nested resource links should open in new tabs.
+        document.querySelectorAll('.left-nav a').forEach(function(link) {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+        });
         
         // Handle back button navigation
         window.addEventListener('popstate', loadContentFromURL);
         
         // Intercept link clicks to use URL parameters instead of navigation
         document.addEventListener('click', function(e) {
-            if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('?')) {
+            const link = e.target.closest('a');
+
+            if (link && link.target !== '_blank' && link.getAttribute('href')?.startsWith('?')) {
                 e.preventDefault();
-                const href = e.target.getAttribute('href');
+                const href = link.getAttribute('href');
                 window.history.pushState(null, '', href);
                 loadContentFromURL();
             }
