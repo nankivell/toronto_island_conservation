@@ -193,18 +193,18 @@
         }
 
         .resource-title,
-        .content-section a:not(.org-url) {
+        .content-section a {
             color: #1e387a;
             display: inline-block;
-            margin-top: 20px;
-        }
-
-        .content-section a:not(.org-url) {
             text-decoration: underline;
         }
 
-        .content-section a:not(.org-url)::after {
+        .content-section a::after {
             content: " ↗";
+        }
+
+        .content-section a:not(.org-url) {
+            margin-top: 20px;
         }
 
         .resource-author {
