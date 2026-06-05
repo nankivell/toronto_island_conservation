@@ -193,17 +193,17 @@
         }
 
         .resource-title,
-        .content-section a {
+        .content-section a:not(.org-url) {
             color: #1e387a;
             display: inline-block;
             margin-top: 20px;
         }
 
-        .content-section a {
+        .content-section a:not(.org-url) {
             text-decoration: underline;
         }
 
-        .content-section a::after {
+        .content-section a:not(.org-url)::after {
             content: " ↗";
         }
 
