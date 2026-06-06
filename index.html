@@ -652,6 +652,17 @@
         function showContent(contentId) {
             const isMobile = window.innerWidth <= 768;
             
+            // Reset all nav links to default color
+            document.querySelectorAll('.project-list a').forEach(link => {
+                link.style.color = '#3c6dff';
+            });
+            
+            // Find and highlight the clicked link
+            const activeLink = document.querySelector(`a[href="?page=${contentId}"]`);
+            if (activeLink) {
+                activeLink.style.color = '#2eff64';
+            }
+            
             if (isMobile) {
                 document.getElementById('home-content-desktop').style.display = 'none';
 
@@ -686,6 +697,11 @@
         }
         
         function showHome() {
+            // Reset all nav links to default color
+            document.querySelectorAll('.project-list a').forEach(link => {
+                link.style.color = '#3c6dff';
+            });
+            
             // Hide all content sections
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.classList.remove('active'));
