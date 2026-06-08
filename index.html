@@ -42,6 +42,7 @@
             display: flex;
             flex: 1;
             align-items: flex-start;
+            overflow: hidden;
         }
         
         .left-nav {
@@ -50,12 +51,18 @@
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: calc(100vh - var(--header-height, 120px));
         }
         
         .right-content {
             width: 70%;
             padding: 0px 20px 20px 20px;
             flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: calc(100vh - var(--header-height, 120px));
         }
         
         header {
@@ -149,6 +156,16 @@
         .project-list a:hover {
             text-decoration: underline;
         }
+
+        a[target="_blank"] {
+            color: #1e387a;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        a[target="_blank"]::after {
+            content: " ↗";
+        }
         
         .copyright {
             font-size: 10px;
@@ -197,10 +214,6 @@
             color: #1e387a;
             display: inline-block;
             text-decoration: underline;
-        }
-
-        .content-section a::after {
-            content: " ↗";
         }
 
         .content-section a:not(.org-url) {
@@ -471,10 +484,10 @@
             <h2><span style="font-weight: 400;">We&rsquo;ve made this website to collect information about what&rsquo;s happening &amp; to share actionable resources, so you can share ways to act to protect this land with your communities!</span></h2>
             <h2 style="font-size: 12px;"><span style="font-weight: 400; color: #9cadff;">This is a joint resource sharing initiative by:&nbsp;<a href="https://www.instagram.com/oral____method/" target="_blank">Oral Method</a>,&nbsp;<a href="https://www.instagram.com/packanimalseries/" target="_blank">Pack Animal</a>, and&nbsp;<a href="https://www.instagram.com/spursnight/" target="_blank">Spurs Night</a></span></h2>
         </div>
-        <h2 style="text-align: center; margin: 40px auto 10px auto; font-family: 'Alte Haas Grotesk', sans-serif; font-size: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #2eff64; -webkit-text-stroke: 1px #3c6dff;">Download Our Flyer:</h2>
-        <div style="text-align: center; margin-bottom: 10px;"><a href="/toronto_island_conservation/island-conservation-flyer.pdf" target="_blank" rel="noopener noreferrer" style="color: #1e387a; text-decoration: underline; font-size: 16px; display: block;">Download web version ↗</a></div>
-        <div style="text-align: center; margin-bottom: 20px;"><a href="/toronto_island_conservation/PA-OM-Flyer.pdf" target="_blank" rel="noopener noreferrer" style="color: #1e387a; text-decoration: underline; font-size: 16px; display: block;">Download print version ↗</a></div>
-        <img src="/toronto_island_conservation/Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
+        <h2 style="text-align: left; margin: 40px 0 10px 0; font-family: 'Alte Haas Grotesk', sans-serif; font-size: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #2eff64; -webkit-text-stroke: 1px #3c6dff;">Download Our Flyer:</h2>
+        <div style="text-align: left; margin-bottom: 10px;"><a href="/toronto_island_conservation/island-conservation-flyer.pdf" target="_blank" rel="noopener noreferrer" style="color: #1e387a; text-decoration: underline; font-size: 16px; display: block;">Download web version</a></div>
+        <div style="text-align: left; margin-bottom: 20px;"><a href="/toronto_island_conservation/PA-OM-Flyer.pdf" target="_blank" rel="noopener noreferrer" style="color: #1e387a; text-decoration: underline; font-size: 16px; display: block;">Download print version</a></div>
+        <img src="/toronto_island_conservation/Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums" style="max-width: 100%; height: auto; margin-top: 20px;">
     </div>
     
     <div class="content-wrapper">
@@ -625,13 +638,13 @@
             <div id="home-content-desktop" class="home-content">
                 <div class="home-intro">
                     <h2><span style="font-weight: 400;">Toronto Island&rsquo;s public land and waterfront is threat of privatization and destruction due to the proposed expansion of Billy Bishop Airport.</span></h2>
-                    <h2><span style="font-weight: 400;">We&rsquo;ve made this website to list the actions you can take right now and to compile key resources to share with your communities."</span></h2>
+                    <h2><span style="font-weight: 400;">We&rsquo;ve made this website to list the actions you can take right now and to compile key resources to share with your communities.</span></h2>
                     <h2 style="font-size: 12px;"><span style="font-weight: 400; color: #9cadff;">This is a joint resource sharing initiative by:&nbsp;<a href="https://www.instagram.com/oral____method/" target="_blank">Oral Method</a>,&nbsp;<a href="https://www.instagram.com/packanimalseries/" target="_blank">Pack Animal</a>, and&nbsp;<a href="https://www.instagram.com/spursnight/" target="_blank">Spurs Night</a></span></h2>
                 </div>
-                <h2 style="text-align: center; margin: 40px auto 10px auto; font-family: 'Alte Haas Grotesk', sans-serif; font-size: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #2eff64; -webkit-text-stroke: 1px #3c6dff;">Download Our Flyer:</h2>
-                <div style="text-align: center; margin-bottom: 10px;"><a href="/toronto_island_conservation/island-conservation-flyer.pdf" target="_blank" rel="noopener noreferrer" style="color: #1e387a; text-decoration: underline; font-size: 16px; display: block;">Download web version ↗</a></div>
-                <div style="text-align: center; margin-bottom: 20px;"><a href="/toronto_island_conservation/PA-OM-Flyer.pdf" target="_blank" rel="noopener noreferrer" style="color: #1e387a; text-decoration: underline; font-size: 16px; display: block;">Download print version ↗</a></div>
-                <img src="/toronto_island_conservation/Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums">
+                <h2 style="text-align: left; margin: 40px 0 10px 0; font-family: 'Alte Haas Grotesk', sans-serif; font-size: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #2eff64; -webkit-text-stroke: 1px #3c6dff;">Download Our Flyer:</h2>
+                <div style="text-align: left; margin-bottom: 10px;"><a href="/toronto_island_conservation/island-conservation-flyer.pdf" target="_blank" rel="noopener noreferrer" style="color: #1e387a; text-decoration: underline; font-size: 16px; display: block;">Download web version</a></div>
+                <div style="text-align: left; margin-bottom: 20px;"><a href="/toronto_island_conservation/PA-OM-Flyer.pdf" target="_blank" rel="noopener noreferrer" style="color: #1e387a; text-decoration: underline; font-size: 16px; display: block;">Download print version</a></div>
+                <img src="/toronto_island_conservation/Toronto-archives-trillums.gif" alt="Toronto Islands Trilliums" style="max-width: 100%; height: auto; margin-top: 20px;">
             </div>
             <a class="back-link" href="?" style="display:none;" id="backLink">← Back</a>
         </div>
@@ -744,6 +757,27 @@
                 const href = link.getAttribute('href');
                 window.history.pushState(null, '', href);
                 loadContentFromURL();
+            }
+        });
+        
+        // Sync scroll between left and right navigation columns
+        const leftNav = document.querySelector('.left-nav');
+        const rightContent = document.querySelector('.right-content');
+        let isSyncing = false;
+        
+        leftNav.addEventListener('scroll', function() {
+            if (!isSyncing) {
+                isSyncing = true;
+                rightContent.scrollTop = leftNav.scrollTop;
+                isSyncing = false;
+            }
+        });
+        
+        rightContent.addEventListener('scroll', function() {
+            if (!isSyncing) {
+                isSyncing = true;
+                leftNav.scrollTop = rightContent.scrollTop;
+                isSyncing = false;
             }
         });
     </script>
