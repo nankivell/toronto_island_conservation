@@ -157,8 +157,9 @@
             text-decoration: underline;
         }
 
-        a[target="_blank"] {
-            color: #1e387a;
+        a[target="_blank"],
+        a[target="_blank"] strong {
+            color: #1e387a !important;
             font-weight: 700;
             text-decoration: underline;
         }
@@ -167,7 +168,8 @@
             content: " ↗";
         }
 
-        .content-section a.external-link {
+        .content-section a.external-link,
+        .content-section a.external-link strong {
             color: #1e387a !important;
             font-weight: 700;
             text-decoration: underline;
